@@ -5,6 +5,7 @@ import Select from '../UI/Select/Select'
 import { Option, UserT } from '../../types/types'
 import { deleteUser, setUsers, useCurrentUsers } from '../../hooks/useUsers'
 
+
 type UserComponentProps = {
   id: number
   availableColors: Array<Option>
@@ -54,7 +55,6 @@ const User: React.FC<UserComponentProps> = ({id, availableColors, availableVaria
     useEffect(() => {
       if (users && userData.status && !users.get(userData.type)) {
         setUsers(userData.type, userData)
-        
         // onColorPicked(userData.color)
         // onVariantPicked(userData.type)
       } else if (users && !userData.status) {
